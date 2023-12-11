@@ -13,22 +13,37 @@ function updatePhoneNumber(isIncrease) {
   return newPhoneNumber;
 }
 
+//update phone price
+function updatePhonePrice(newPhoneNumber) {
+  const totalPhonePrice = newPhoneNumber * 1219;
+  const getPhonePrice = document.getElementById("phone-price");
+
+  //error handling
+  if (totalPhonePrice < 1219) {
+    alert("please add a phone first");
+    return;
+  }
+  getPhonePrice.innerText = totalPhonePrice;
+}
+
+//phone number plus button
 document
   .getElementById("btn-phone-plus")
   .addEventListener("click", function () {
     const newPhoneNumber = updatePhoneNumber(true);
-    const totalPhonePrice = newPhoneNumber * 1219;
-    const getPhonePrice = document.getElementById("phone-price");
-    getPhonePrice.innerText = totalPhonePrice;
+    updatePhonePrice(newPhoneNumber);
     //set phone number
   });
 
+//phone number minus button
 document
   .getElementById("btn-phone-minus")
   .addEventListener("click", function () {
     const newPhoneNumber = updatePhoneNumber(false);
-    const totalPhonePrice = newPhoneNumber * 1219;
-    const getPhonePrice = document.getElementById("phone-price");
-    getPhonePrice.innerText = totalPhonePrice;
+    updatePhonePrice(newPhoneNumber);
+    //provide by update Phone price functions
+    // const totalPhonePrice = newPhoneNumber * 1219;
+    // const getPhonePrice = document.getElementById("phone-price");
+    // getPhonePrice.innerText = totalPhonePrice;
     //set phone number
   });
