@@ -26,9 +26,15 @@ document
   .addEventListener("click", function () {
     const newCaseNumber = updateCaseNumber(false);
     const getDefoultCasePrice = document.getElementById("case-price");
-    const totalCasePricesSting = getDefoultCasePrice.innerText;
-    const totalCasePrice = parseInt(totalCasePricesSting);
-    const newTotal = totalCasePrice - 59;
 
-    getDefoultCasePrice.innerText = newTotal;
+    const totalCasePrice = newCaseNumber * 59;
+    //you cal also use this code
+    // const totalCasePricesSting = getDefoultCasePrice.innerText;
+    // const totalCasePrice = parseInt(totalCasePricesSting);
+    // const newTotal = totalCasePrice - 59;
+    if (totalCasePrice < 59) {
+      alert("added product");
+      return;
+    }
+    getDefoultCasePrice.innerText = totalCasePrice;
   });
