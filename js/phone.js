@@ -19,10 +19,10 @@ function updatePhonePrice(newPhoneNumber) {
   const getPhonePrice = document.getElementById("phone-price");
 
   //error handling
-  if (totalPhonePrice < 1219) {
-    alert("please add a phone first");
-    return;
-  }
+  // if (totalPhonePrice < 1219) {
+  //   alert("please add a phone first");
+  //   return;
+  // }
   getPhonePrice.innerText = totalPhonePrice;
 }
 
@@ -31,9 +31,13 @@ document
   .getElementById("btn-phone-plus")
   .addEventListener("click", function () {
     const newPhoneNumber = updatePhoneNumber(true);
+
     updatePhonePrice(newPhoneNumber);
+    calculateSubTotal();
     //set phone number
   });
+
+//get phone total for subtotal
 
 //phone number minus button
 document
@@ -46,4 +50,5 @@ document
     // const getPhonePrice = document.getElementById("phone-price");
     // getPhonePrice.innerText = totalPhonePrice;
     //set phone number
+    calculateSubTotal();
   });

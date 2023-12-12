@@ -19,6 +19,7 @@ document.getElementById("btn-case-plus").addEventListener("click", function () {
   const totalCasePrice = newCaseNumber * 59;
   const getDefoultCasePrice = document.getElementById("case-price");
   getDefoultCasePrice.innerText = totalCasePrice;
+  calculateSubTotal();
 });
 
 document
@@ -32,9 +33,10 @@ document
     // const totalCasePricesSting = getDefoultCasePrice.innerText;
     // const totalCasePrice = parseInt(totalCasePricesSting);
     // const newTotal = totalCasePrice - 59;
-    if (totalCasePrice < 59) {
-      alert("added product");
-      return;
-    }
+    // if (totalCasePrice < 59) {
+    //   alert("added product");
+    //   return;
+    // }
     getDefoultCasePrice.innerText = totalCasePrice;
+    calculateSubTotal();
   });
